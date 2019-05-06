@@ -55,15 +55,16 @@ matrix:
 cache: npm
 
 before_install:
-- |
-  case "${TRAVIS_OS_NAME}" in
-    "windows")
-      # yarn isn't installed by default
-      npm install --global yarn
-    ;;
-  esac
+  - |
+    case "${TRAVIS_OS_NAME}" in
+      "windows")
+        # yarn isn't installed by default
+        npm install --global yarn
+      ;;
+    esac
+  - curl -L https://unpkg.com/@pnpm/self-installer | node
 
-install: npm ci
+install: pnpm recursive install
 
 before_script:
   - npm config set loglevel warn
@@ -72,4 +73,4 @@ before_script:
   - yarn --version
 
 script:
-  - npm run $LERNA_CI_SCRIPT
+  - pnpm run $LERNA_CI_SCRIPT
