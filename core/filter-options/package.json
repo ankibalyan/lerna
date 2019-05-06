@@ -35,5 +35,8 @@
     "@lerna/collect-updates": "file:../../utils/collect-updates",
     "@lerna/filter-packages": "file:../../utils/filter-packages",
     "dedent": "^0.7.0"
+  },
+  "devDependencies": {
+    "@lerna/project": "link:../project"
   }
 }
