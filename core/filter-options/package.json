@@ -37,6 +37,7 @@
     "dedent": "^0.7.0"
   },
   "devDependencies": {
+    "@lerna/package-graph": "link:../package-graph",
     "@lerna/project": "link:../project"
   }
 }
