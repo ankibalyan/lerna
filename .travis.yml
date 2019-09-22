@@ -62,7 +62,7 @@ before_install:
         npm install --global yarn
       ;;
     esac
-  - curl -L https://unpkg.com/@pnpm/self-installer | node
+  - npm install --global pnpm
 
 install: pnpm recursive install
 
